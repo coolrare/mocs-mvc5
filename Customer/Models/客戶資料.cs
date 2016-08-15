@@ -11,7 +11,8 @@ namespace Customer.Models
 {
     using System;
     using System.Collections.Generic;
-    
+    using System.ComponentModel.DataAnnotations;
+
     public partial class 客戶資料
     {
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2214:DoNotCallOverridableMethodsInConstructors")]
@@ -22,11 +23,18 @@ namespace Customer.Models
         }
     
         public int Id { get; set; }
+
+        [Required]
         public string 客戶名稱 { get; set; }
+        [Required]
         public string 統一編號 { get; set; }
+        [Required]
         public string 電話 { get; set; }
+        [Required]
         public string 傳真 { get; set; }
+        [Required]
         public string 地址 { get; set; }
+        [Required]
         public string Email { get; set; }
     
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
