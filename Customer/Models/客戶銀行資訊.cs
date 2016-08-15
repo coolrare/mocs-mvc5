@@ -18,14 +18,17 @@ namespace Customer.Models
         public int Id { get; set; }
         public int 客戶Id { get; set; }
         [Required]
+        [StringLength(20, MinimumLength = 4)]
         public string 銀行名稱 { get; set; }
         [Required]
+        [Range(100, 999)]
         public int 銀行代碼 { get; set; }
         [Required]
         public Nullable<int> 分行代碼 { get; set; }
         [Required]
         public string 帳戶名稱 { get; set; }
         [Required]
+        [RegularExpression(@"\d{12,16}")]
         public string 帳戶號碼 { get; set; }
     
         public virtual 客戶資料 客戶資料 { get; set; }

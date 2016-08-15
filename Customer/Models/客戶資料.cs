@@ -27,14 +27,17 @@ namespace Customer.Models
         [Required]
         public string 客戶名稱 { get; set; }
         [Required]
+        [RegularExpression(@"\d{8}", ErrorMessage = "{0}必須為 8 個數字")]
         public string 統一編號 { get; set; }
         [Required]
         public string 電話 { get; set; }
         [Required]
         public string 傳真 { get; set; }
         [Required]
+        [UIHint("GoogleMaps")]
         public string 地址 { get; set; }
         [Required]
+        [EmailAddress]
         public string Email { get; set; }
     
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
