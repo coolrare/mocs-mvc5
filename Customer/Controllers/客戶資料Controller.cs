@@ -15,8 +15,10 @@ namespace Customer.Controllers
         private CustomerEntities db = new CustomerEntities();
 
         // GET: 客戶資料
-        public ActionResult Index()
+        public ActionResult Index(int id = 0)
         {
+            ViewBag.SelectedClient = db.客戶資料.Find(id);
+
             return View(db.客戶資料.ToList());
         }
 

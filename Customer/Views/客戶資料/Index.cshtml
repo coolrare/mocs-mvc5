@@ -54,10 +54,21 @@
         </td>
         <td>
             @Html.ActionLink("Edit", "Edit", new { id=item.Id }) |
-            @Html.ActionLink("Details", "Details", new { id=item.Id }) |
+            @Html.ActionLink("Details", "Index", new { id=item.Id }) |
             @Html.ActionLink("Delete", "Delete", new { id=item.Id })
         </td>
     </tr>
 }
 
 </table>
+
+@{
+    var client = ViewBag.SelectedClient as Customer.Models.客戶資料;
+}
+@if (client != null)
+{
+    <hr />
+    <h2>Details</h2>
+    @Html.DisplayFor(model => client)
+}
+
